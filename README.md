@@ -21,3 +21,18 @@ encryptando senha:
 ```
 yarn add bcryptjs
 ```
+
+Autenticação:
+
+JWT: gerando token para utilizar na autenticação
+```
+yarn add jsonwebtoken
+```
+
+config/auth.json
+hash unica para o sistema. Utilizado o md5 para gera-la
+
+middleware: 
+validando se realmente o token esta correto
+é possivel interceptar o usuario para que ele não consiga prosseguir na aplicação
+

@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        select: false,
+        select: false, // Indica que quando buscar a lista de usuarios, para não vir o campo de password junto
     },
     createdAt: {
         type: Date,
