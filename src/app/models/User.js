@@ -1,5 +1,5 @@
 // Conectando com o banco de dados
-const mongoose = require('../database');
+const mongoose = require('../../database');
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
@@ -17,6 +17,16 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         select: false, // Indica que quando buscar a lista de usuarios, para não vir o campo de password junto
+    },
+    // incluindo campos para função de esqueci minha senha
+    passwordResetToken: {
+        type: String,
+        select: false, // false para nao vir por padrao nas requisições
+    },
+    // guardando a data de expiração do token
+    passworfResetExpires: {
+        type: Date,
+        select: false,
     },
     createdAt: {
         type: Date,
